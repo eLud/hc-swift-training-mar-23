@@ -16,6 +16,8 @@
 		3370091E29B7797F00BF5510 /* Vinyl_LibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370091D29B7797F00BF5510 /* Vinyl_LibraryTests.swift */; };
 		3370092829B7797F00BF5510 /* Vinyl_LibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370092729B7797F00BF5510 /* Vinyl_LibraryUITests.swift */; };
 		3370092A29B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370092929B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift */; };
+		3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370096D29B78DD600BF5510 /* Vinyl.swift */; };
+		3370097029B78DF500BF5510 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370096F29B78DF500BF5510 /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3370092329B7797F00BF5510 /* Vinyl LibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vinyl LibraryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3370092729B7797F00BF5510 /* Vinyl_LibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vinyl_LibraryUITests.swift; sourceTree = "<group>"; };
 		3370092929B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vinyl_LibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3370096D29B78DD600BF5510 /* Vinyl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vinyl.swift; sourceTree = "<group>"; };
+		3370096F29B78DF500BF5510 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				3370090F29B7797F00BF5510 /* Assets.xcassets */,
 				3370091129B7797F00BF5510 /* LaunchScreen.storyboard */,
 				3370091429B7797F00BF5510 /* Info.plist */,
+				3370096D29B78DD600BF5510 /* Vinyl.swift */,
+				3370096F29B78DF500BF5510 /* Library.swift */,
 			);
 			path = "Vinyl Library";
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */,
 				3370090B29B7797E00BF5510 /* ViewController.swift in Sources */,
+				3370097029B78DF500BF5510 /* Library.swift in Sources */,
 				3370090729B7797E00BF5510 /* AppDelegate.swift in Sources */,
 				3370090929B7797E00BF5510 /* SceneDelegate.swift in Sources */,
 			);
