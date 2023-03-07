@@ -111,3 +111,12 @@ func loadEquipment(periodId: Int) async -> (equipment: [String], erroCode: Int) 
 
 let result = await loadEquipment(periodId: 5)
 result.equipment
+
+enum TransportStatus {
+    case onTime
+    case delayed(delay: Int, reason: String) // Associated value
+    case cancelled
+}
+
+var status = TransportStatus.onTime
+status = .delayed(delay: 60, reason: "on strike")
