@@ -34,20 +34,13 @@ class ViewController: UIViewController {
         configureSegmentedControl()
     }
 
-    private func configureSegmentedControl() {
-        speedSegmentedControl.removeAllSegments()
-        for speed in Vinyl.Speed.allCases {
-            speedSegmentedControl.insertSegment(withTitle: speed.title, at: speedSegmentedControl.numberOfSegments, animated: false)
-        }
-        speedSegmentedControl.selectedSegmentIndex = 0
-    }
-
     @IBAction func createVinyl(_ sender: UIButton) {
 
         guard let albumName = albumNameTextField.text, albumName.count > 3 else {
             print("Exit at album name")
             return
         }
+
         let date = releaseDatePicker.date
         let scratched = scratchedSwitch.isOn
 
@@ -56,8 +49,20 @@ class ViewController: UIViewController {
 
         let newVinyl = Vinyl(albumName: albumName, artist: "", releaseDate: date, numberInSerie: nil, titles: [], scratched: scratched, speed: speed)
 
-
         print("Create vinyl \(newVinyl)")
+
+
     }
 }
 
+extension ViewController {
+
+    private func configureSegmentedControl() {
+        speedSegmentedControl.removeAllSegments()
+        for speed in Vinyl.Speed.allCases {
+            speedSegmentedControl.insertSegment(withTitle: speed.title, at: speedSegmentedControl.numberOfSegments, animated: false)
+        }
+        speedSegmentedControl.selectedSegmentIndex = 0
+    }
+    
+}

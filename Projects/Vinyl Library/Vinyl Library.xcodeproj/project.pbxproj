@@ -18,6 +18,8 @@
 		3370092A29B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370092929B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift */; };
 		3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370096D29B78DD600BF5510 /* Vinyl.swift */; };
 		3370097029B78DF500BF5510 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370096F29B78DF500BF5510 /* Library.swift */; };
+		3370097929B8CC2100BF5510 /* MusicHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097829B8CC2100BF5510 /* MusicHolder.swift */; };
+		3370097B29B8D29C00BF5510 /* VinylListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097A29B8D29B00BF5510 /* VinylListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		3370092929B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vinyl_LibraryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3370096D29B78DD600BF5510 /* Vinyl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vinyl.swift; sourceTree = "<group>"; };
 		3370096F29B78DF500BF5510 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		3370097829B8CC2100BF5510 /* MusicHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHolder.swift; sourceTree = "<group>"; };
+		3370097A29B8D29B00BF5510 /* VinylListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +107,15 @@
 		3370090529B7797E00BF5510 /* Vinyl Library */ = {
 			isa = PBXGroup;
 			children = (
+				3370097629B8A16A00BF5510 /* Models */,
 				3370090629B7797E00BF5510 /* AppDelegate.swift */,
 				3370090829B7797E00BF5510 /* SceneDelegate.swift */,
 				3370090A29B7797E00BF5510 /* ViewController.swift */,
+				3370097A29B8D29B00BF5510 /* VinylListViewController.swift */,
 				3370090C29B7797E00BF5510 /* Main.storyboard */,
 				3370090F29B7797F00BF5510 /* Assets.xcassets */,
 				3370091129B7797F00BF5510 /* LaunchScreen.storyboard */,
 				3370091429B7797F00BF5510 /* Info.plist */,
-				3370096D29B78DD600BF5510 /* Vinyl.swift */,
-				3370096F29B78DF500BF5510 /* Library.swift */,
 			);
 			path = "Vinyl Library";
 			sourceTree = "<group>";
@@ -131,6 +135,16 @@
 				3370092929B7797F00BF5510 /* Vinyl_LibraryUITestsLaunchTests.swift */,
 			);
 			path = "Vinyl LibraryUITests";
+			sourceTree = "<group>";
+		};
+		3370097629B8A16A00BF5510 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3370096D29B78DD600BF5510 /* Vinyl.swift */,
+				3370097829B8CC2100BF5510 /* MusicHolder.swift */,
+				3370096F29B78DF500BF5510 /* Library.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3370097B29B8D29C00BF5510 /* VinylListViewController.swift in Sources */,
 				3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */,
 				3370090B29B7797E00BF5510 /* ViewController.swift in Sources */,
 				3370097029B78DF500BF5510 /* Library.swift in Sources */,
+				3370097929B8CC2100BF5510 /* MusicHolder.swift in Sources */,
 				3370090729B7797E00BF5510 /* AppDelegate.swift in Sources */,
 				3370090929B7797E00BF5510 /* SceneDelegate.swift in Sources */,
 			);

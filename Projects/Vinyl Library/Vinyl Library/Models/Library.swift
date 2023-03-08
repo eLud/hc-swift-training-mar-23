@@ -8,6 +8,7 @@
 import Foundation
 
 class Library {
+
     var vinyls: [Vinyl] = []
 
     func add(_ vinyl: Vinyl) {
@@ -19,5 +20,11 @@ class Library {
             return vinyls.remove(at: index)
         }
         return nil
+    }
+}
+
+extension Library: Equatable {
+    static func == (lhs: Library, rhs: Library) -> Bool {
+        lhs.vinyls == rhs.vinyls
     }
 }
