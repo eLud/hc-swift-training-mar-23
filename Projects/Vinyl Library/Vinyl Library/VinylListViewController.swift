@@ -44,20 +44,33 @@ extension VinylListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
+        let cell: UITableViewCell
+        switch indexPath.section {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+        default:
+            fatalError("Section not config")
+        }
+
+        if let cell = cell as? DemoCustomTableViewCell {
+            cell.titleLabel.text = "Youhou"
+            cell.switch.isOn = indexPath.row.isMultiple(of: 2)
+        } else {
+            // Get config
+            var config = cell.defaultContentConfiguration()
+
+            //Configure
+            config.text = "\(indexPath)"
+            config.secondaryText = "Hello"
+
+            //Assign the config
+            cell.contentConfiguration = config
+        }
 
         // Configure the cell
 //        cell.textLabel?.text = "Toto"
-
-        // Get config
-        var config = cell.defaultContentConfiguration()
-
-        //Configure
-        config.text = "\(indexPath)"
-        config.secondaryText = "Hello"
-
-        //Assign the config
-        cell.contentConfiguration = config
 
         return cell
     }
