@@ -8,10 +8,18 @@
 import Foundation
 
 struct Vinyl: Equatable {
-    enum Speed {
-        case rpm33
-        case rpm45
-        case rpm78
+    enum Speed: Int, CaseIterable {
+        case rpm33 = 33
+        case rpm45 = 45
+        case rpm78 = 78
+
+        static var toutLescases: [Speed] {
+            [rpm33, rpm45, rpm78]
+        }
+
+        var title: String {
+            return "\(rawValue)trs"
+        }
     }
 
     let albumName: String

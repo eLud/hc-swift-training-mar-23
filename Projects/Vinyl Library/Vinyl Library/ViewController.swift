@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         print("View did load")
-
         menuButton.menu = UIMenu(children: [
             UIAction(title: "First Entry", handler: {_ in }),
             UIAction(title: "Second Entry", handler: {_ in }),
@@ -32,7 +31,15 @@ class ViewController: UIViewController {
 
             ])
         ])
+        configureSegmentedControl()
+    }
 
+    private func configureSegmentedControl() {
+        speedSegmentedControl.removeAllSegments()
+        for speed in Vinyl.Speed.allCases {
+            speedSegmentedControl.insertSegment(withTitle: speed.title, at: speedSegmentedControl.numberOfSegments, animated: false)
+        }
+        speedSegmentedControl.selectedSegmentIndex = 0
     }
 
     @IBAction func createVinyl(_ sender: UIButton) {
@@ -44,7 +51,8 @@ class ViewController: UIViewController {
         let date = releaseDatePicker.date
         let scratched = scratchedSwitch.isOn
 
-        let speed = Vinyl.Speed.rpm33
+        let selectedSegmentIndex = speedSegmentedControl.selectedSegmentIndex
+        let speed = Vinyl.Speed.allCases[selectedSegmentIndex]
 
         let newVinyl = Vinyl(albumName: albumName, artist: "", releaseDate: date, numberInSerie: nil, titles: [], scratched: scratched, speed: speed)
 
