@@ -19,8 +19,8 @@
 		3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370096D29B78DD600BF5510 /* Vinyl.swift */; };
 		3370097029B78DF500BF5510 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370096F29B78DF500BF5510 /* Library.swift */; };
 		3370097929B8CC2100BF5510 /* MusicHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097829B8CC2100BF5510 /* MusicHolder.swift */; };
-		3370097B29B8D29C00BF5510 /* VinylListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097A29B8D29B00BF5510 /* VinylListViewController.swift */; };
 		337E6A1729B8E44A00933161 /* DemoCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E6A1629B8E44A00933161 /* DemoCustomTableViewCell.swift */; };
+		337E6A1A29B9F62100933161 /* VinylListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097A29B8D29B00BF5510 /* VinylListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,12 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3370097B29B8D29C00BF5510 /* VinylListViewController.swift in Sources */,
 				3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */,
 				3370090B29B7797E00BF5510 /* ViewController.swift in Sources */,
 				337E6A1729B8E44A00933161 /* DemoCustomTableViewCell.swift in Sources */,
 				3370097029B78DF500BF5510 /* Library.swift in Sources */,
 				3370097929B8CC2100BF5510 /* MusicHolder.swift in Sources */,
+				337E6A1A29B9F62100933161 /* VinylListViewController.swift in Sources */,
 				3370090729B7797E00BF5510 /* AppDelegate.swift in Sources */,
 				3370090929B7797E00BF5510 /* SceneDelegate.swift in Sources */,
 			);

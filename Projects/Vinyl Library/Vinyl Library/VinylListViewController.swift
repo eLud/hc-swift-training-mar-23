@@ -21,6 +21,16 @@ class VinylListViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        let notCenter = NotificationCenter.default
+
+        notCenter.addObserver(forName: Notification.Name(rawValue: "LibraryChanged"), object: library, queue: OperationQueue.main) { notif in
+            self.tableView.reloadData()
+        }
+    }
+
+    @IBAction func refresh(_ sender: Any) {
+        tableView.reloadData()
     }
 
     @IBAction func showSearch(_ sender: Any) {
@@ -39,6 +49,10 @@ class VinylListViewController: UIViewController {
 
         if segue.identifier == "showForm", let destination = segue.destination as? ViewController {
             destination.library = library
+        } else if segue.identifier == "showDetails" {
+            guard let cell = sender as? UITableViewCell,
+                    let ip = tableView.indexPath(for: cell) else { return }
+            segue.destination.title = library.vinyls[ip.row].albumName
         }
     }
 }

@@ -13,9 +13,16 @@ class Library {
 
     func add(_ vinyl: Vinyl) {
         vinyls.append(vinyl)
+        let notCenter = NotificationCenter.default
+        notCenter.post(name: Notification.Name(rawValue: "LibraryChanged"), object: self)
     }
 
     func remove(_ vinyl: Vinyl) -> Vinyl? {
+        defer {
+            let notCenter = NotificationCenter.default
+            notCenter.post(name: Notification.Name(rawValue: "LibraryChanged"), object: self)
+        }
+
         if let index = vinyls.firstIndex(of: vinyl) {
             return vinyls.remove(at: index)
         }
