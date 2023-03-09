@@ -21,6 +21,13 @@ class Library {
         }
         return nil
     }
+
+    func populateDemoData() {
+        for i in 0..<100 {
+            let v = Vinyl(albumName: "Vinyl \(i)", artist: "Artist Vinyl \(i)", releaseDate: Date(), numberInSerie: nil, titles: [], scratched: i.isMultiple(of: 2), speed: .rpm33)
+            add(v)
+        }
+    }
 }
 
 extension Library: Equatable {

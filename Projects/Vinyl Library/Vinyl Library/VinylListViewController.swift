@@ -16,6 +16,8 @@ class VinylListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        library.populateDemoData()
+
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -39,7 +41,12 @@ extension VinylListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        switch section {
+        case 0:
+            return library.vinyls.count
+        default:
+            return 10
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,8 +69,12 @@ extension VinylListViewController: UITableViewDataSource {
             var config = cell.defaultContentConfiguration()
 
             //Configure
-            config.text = "\(indexPath)"
-            config.secondaryText = "Hello"
+            let vinyl = library.vinyls[indexPath.row]
+            config.text = vinyl.albumName
+            config.textProperties.color = UIColor.label
+            config.secondaryText = vinyl.artist
+            config.secondaryTextProperties.color = UIColor.secondaryLabel
+            config.image = UIImage(systemName: "opticaldisc.fill")
 
             //Assign the config
             cell.contentConfiguration = config
