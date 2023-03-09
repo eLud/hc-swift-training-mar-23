@@ -55,6 +55,9 @@ class ViewController: UIViewController {
 
         let newVinyl = Vinyl(albumName: albumName, artist: "", releaseDate: date, numberInSerie: nil, titles: [], scratched: scratched, speed: speed)
         library?.add(newVinyl)
+
+        dismiss(animated: true)
+//        navigationController?.popViewController(animated: true)
     }
 }
 

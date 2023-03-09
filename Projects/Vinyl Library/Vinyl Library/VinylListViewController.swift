@@ -39,6 +39,9 @@ class VinylListViewController: UIViewController {
         }
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     // MARK: - Navigation
 
@@ -104,8 +107,7 @@ extension VinylListViewController: UITableViewDataSource {
             cell.contentConfiguration = config
 
             for i in 0...1000 {
-                format.dateStyle = .full
-
+                format.dateStyle = .medium
                 print(format.string(from: Date()))
             }
         }
