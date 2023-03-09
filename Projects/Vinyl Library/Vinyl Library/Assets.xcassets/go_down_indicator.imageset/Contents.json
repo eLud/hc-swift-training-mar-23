@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "go_down_indicator.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

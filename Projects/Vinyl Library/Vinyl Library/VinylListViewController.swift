@@ -12,6 +12,7 @@ class VinylListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     let library = Library()
+    let format = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,14 +76,22 @@ extension VinylListViewController: UITableViewDataSource {
             config.secondaryText = vinyl.artist
             config.secondaryTextProperties.color = UIColor.secondaryLabel
             config.image = UIImage(systemName: "opticaldisc.fill")
+//            config.image = UIImage(named: "go_down_indicator")
 
             //Assign the config
             cell.contentConfiguration = config
+
+            for i in 0...1000 {
+                format.dateStyle = .full
+
+                print(format.string(from: Date()))
+            }
         }
 
         // Configure the cell
 //        cell.textLabel?.text = "Toto"
 
+        print("Returning cell at \(indexPath)")
         return cell
     }
 }
