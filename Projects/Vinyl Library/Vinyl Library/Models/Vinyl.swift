@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Vinyl: Equatable, MusicHolder {
+struct Vinyl: Equatable, MusicHolder, Identifiable {
     enum Speed: Int, CaseIterable {
         case rpm33 = 33
         case rpm45 = 45
@@ -29,4 +29,12 @@ struct Vinyl: Equatable, MusicHolder {
     let titles: [String]
     var scratched: Bool
     let speed: Speed
+
+    let id = UUID()
+}
+
+extension Vinyl.Speed: Identifiable {
+    var id: Vinyl.Speed {
+        self
+    }
 }

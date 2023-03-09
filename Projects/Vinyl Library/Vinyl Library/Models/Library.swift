@@ -7,22 +7,22 @@
 
 import Foundation
 
-class Library {
+class Library: ObservableObject {
 
-    var vinyls: [Vinyl] = []
+    @Published var vinyls: [Vinyl]
+
+    init(demoData: Bool = false) {
+        self.vinyls = []
+        if demoData {
+            populateDemoData()
+        }
+    }
 
     func add(_ vinyl: Vinyl) {
         vinyls.append(vinyl)
-        let notCenter = NotificationCenter.default
-        notCenter.post(name: Notification.Name(rawValue: "LibraryChanged"), object: self)
     }
 
     func remove(_ vinyl: Vinyl) -> Vinyl? {
-        defer {
-            let notCenter = NotificationCenter.default
-            notCenter.post(name: Notification.Name(rawValue: "LibraryChanged"), object: self)
-        }
-
         if let index = vinyls.firstIndex(of: vinyl) {
             return vinyls.remove(at: index)
         }
