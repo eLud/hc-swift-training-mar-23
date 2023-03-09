@@ -23,16 +23,24 @@ class VinylListViewController: UIViewController {
         tableView.delegate = self
     }
 
-    /*
+    @IBAction func showSearch(_ sender: Any) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "mint") {
+            show(vc, sender: nil)
+        }
+    }
+
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
 
+        if segue.identifier == "showForm", let destination = segue.destination as? ViewController {
+            destination.library = library
+        }
+    }
 }
 
 extension VinylListViewController: UITableViewDataSource {

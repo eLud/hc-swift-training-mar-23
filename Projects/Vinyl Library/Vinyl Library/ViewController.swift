@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var scratchedSwitch: UISwitch!
     @IBOutlet weak var speedSegmentedControl: UISegmentedControl!
 
+    var library: Library?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +34,10 @@ class ViewController: UIViewController {
             ])
         ])
         configureSegmentedControl()
+
+        if let library {
+            print(library.vinyls)
+        }
     }
 
     @IBAction func createVinyl(_ sender: UIButton) {
@@ -48,10 +54,7 @@ class ViewController: UIViewController {
         let speed = Vinyl.Speed.allCases[selectedSegmentIndex]
 
         let newVinyl = Vinyl(albumName: albumName, artist: "", releaseDate: date, numberInSerie: nil, titles: [], scratched: scratched, speed: speed)
-
-        print("Create vinyl \(newVinyl)")
-
-
+        library?.add(newVinyl)
     }
 }
 
