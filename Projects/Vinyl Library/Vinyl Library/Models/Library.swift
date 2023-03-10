@@ -18,10 +18,15 @@ class Library: ObservableObject {
         }
     }
 
+    /// Add a vinyl
+    /// - Parameter vinyl: A vinyl
     func add(_ vinyl: Vinyl) {
         vinyls.append(vinyl)
     }
 
+    /// Remove a vinyl
+    /// - Parameter vinyl: Vinyl to remove
+    /// - Returns: The removed vinyl if found
     func remove(_ vinyl: Vinyl) -> Vinyl? {
         if let index = vinyls.firstIndex(of: vinyl) {
             return vinyls.remove(at: index)

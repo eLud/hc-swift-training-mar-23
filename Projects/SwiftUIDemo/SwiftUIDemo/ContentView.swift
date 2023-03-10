@@ -10,10 +10,10 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var speed = Vinyl.Speed.rpm33
-    @State private var title = ""
+    @SceneStorage("lastTitle") private var title = ""
     @State private var artist = ""
     @State private var releaseDate = Date()
-    @State private var scratched = false
+    @AppStorage("lastScratched") private var scratched = false
 
     @ObservedObject var library: Library
 
@@ -45,7 +45,31 @@ struct ContentView: View {
     private func createVinyl() {
         let newVinyl = Vinyl(albumName: title, artist: artist, releaseDate: releaseDate, numberInSerie: nil, titles: [], scratched: scratched, speed: speed)
         library.add(newVinyl)
+        
         dismiss()
+
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+
+//        do {
+//            let data = try encoder.encode(newVinyl)
+//        } catch {
+//            print(error)
+//        }
+
+        if let data = try? encoder.encode(newVinyl),
+            let vinyl = try? decoder.decode(Vinyl.self, from: data) {
+            print(String(data: data, encoding: .utf8)!)
+            print(vinyl)
+            print(newVinyl)
+
+            let fileManager = FileManager.default
+            if let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+                let fileUrl = url.appending(path: "newVinyl").appendingPathExtension("json")
+                print(fileUrl)
+                try? data.write(to: fileUrl)
+            }
+        }
     }
 }
 

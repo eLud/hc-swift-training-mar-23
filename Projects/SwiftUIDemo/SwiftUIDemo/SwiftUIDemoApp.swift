@@ -25,6 +25,11 @@ struct SwiftUIDemoApp: App {
                         Text("Out")
                         Image(systemName: "square.and.arrow.up")
                     }
+                NetworkView()
+                    .tabItem {
+                        Text("Network")
+                        Image(systemName: "network")
+                    }
             }
         }
     }

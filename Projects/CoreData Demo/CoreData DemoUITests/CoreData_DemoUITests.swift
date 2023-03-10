@@ -1,13 +1,13 @@
 //
-//  SwiftUIDemoUITests.swift
-//  SwiftUIDemoUITests
+//  CoreData_DemoUITests.swift
+//  CoreData DemoUITests
 //
-//  Created by Ludovic Ollagnier on 09/03/2023.
+//  Created by Ludovic Ollagnier on 10/03/2023.
 //
 
 import XCTest
 
-final class SwiftUIDemoUITests: XCTestCase {
+final class CoreData_DemoUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,23 +28,6 @@ final class SwiftUIDemoUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testSomething() {
-
-        let app = XCUIApplication()
-        app.launch()
-        app.navigationBars["Vinyl list"]/*@START_MENU_TOKEN@*/.buttons["Ajouter"]/*[[".otherElements[\"Ajouter\"].buttons[\"Ajouter\"]",".buttons[\"Ajouter\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-
-        let collectionViewsQuery = app.collectionViews
-        let tf = collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Vinyl's title"]/*[[".cells.textFields[\"Vinyl's title\"]",".textFields[\"Vinyl's title\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        tf.tap()
-
-        collectionViewsQuery/*@START_MENU_TOKEN@*/.buttons["Create vinyl"]/*[[".cells.buttons[\"Create vinyl\"]",".buttons[\"Create vinyl\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        collectionViewsQuery/*@START_MENU_TOKEN@*/.buttons["Plop"]/*[[".cells.buttons[\"Plop\"]",".buttons[\"Plop\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-
-        XCTAssertTrue(app.textFields["Plop"].exists)
-
     }
 
     func testLaunchPerformance() throws {
