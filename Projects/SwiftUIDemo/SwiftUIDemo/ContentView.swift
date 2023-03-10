@@ -17,6 +17,8 @@ struct ContentView: View {
 
     @ObservedObject var library: Library
 
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
         Form {
             Picker("Vinyl's speed", selection: $speed) {
@@ -43,6 +45,7 @@ struct ContentView: View {
     private func createVinyl() {
         let newVinyl = Vinyl(albumName: title, artist: artist, releaseDate: releaseDate, numberInSerie: nil, titles: [], scratched: scratched, speed: speed)
         library.add(newVinyl)
+        dismiss()
     }
 }
 

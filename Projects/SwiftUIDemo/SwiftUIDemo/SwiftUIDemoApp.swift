@@ -14,7 +14,18 @@ struct SwiftUIDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            VinylListView(library: library)
+            TabView {
+                VinylListView(library: library)
+                    .tabItem {
+                        Text("List")
+                        Image(systemName: "list.bullet")
+                    }
+                Text("Vinyl Out")
+                    .tabItem {
+                        Text("Out")
+                        Image(systemName: "square.and.arrow.up")
+                    }
+            }
         }
     }
 }
