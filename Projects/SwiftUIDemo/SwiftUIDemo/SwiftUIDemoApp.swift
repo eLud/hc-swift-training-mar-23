@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SwiftUIDemoApp: App {
+
+    @StateObject var library = Library()
+
     var body: some Scene {
         WindowGroup {
-            VinylListView()
+            VinylListView(library: library)
         }
     }
 }

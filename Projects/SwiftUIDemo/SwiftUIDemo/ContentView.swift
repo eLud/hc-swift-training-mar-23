@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var releaseDate = Date()
     @State private var scratched = false
 
-    let library = Library()
+    @ObservedObject var library: Library
 
     var body: some View {
         Form {
@@ -33,6 +33,7 @@ struct ContentView: View {
                 Text("Release date")
             }
             Toggle("Scratched", isOn: $scratched)
+            CustomToggle(monBool: $scratched)
             Section {
                 Button("Create vinyl", action: createVinyl)
             }
@@ -47,6 +48,36 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(library: Library())
+    }
+}
+
+struct CustomToggle: View {
+
+    @Binding var monBool: Bool
+
+    var body: some View {
+        Rectangle()
+            .frame(width: 70, height: 30)
+            .foregroundColor(backgroundColor)
+            .overlay(alignment: monBool ? .trailing : .leading) {
+                Rectangle()
+                    .frame(width: 26, height: 26)
+                    .padding(.horizontal, 4)
+            }
+            .animation(.spring(), value: monBool)
+            .onTapGesture {
+                withAnimation {
+                    monBool.toggle()
+                }
+            }
+    }
+
+    private var backgroundColor: Color {
+        if monBool {
+            return Color.green
+        } else {
+            return Color.gray
+        }
     }
 }

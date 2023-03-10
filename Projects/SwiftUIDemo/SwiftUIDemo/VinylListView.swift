@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VinylListView: View {
 
-    @StateObject private var library = Library(demoData: false)
+    @ObservedObject var library: Library
     @State private var showForm = false
 
     var body: some View {
@@ -20,7 +20,7 @@ struct VinylListView: View {
                 vinylSection
             }
             .sheet(isPresented: $showForm, content: {
-                ContentView()
+                ContentView(library: library)
             })
             .navigationTitle("Vinyl list")
             .toolbar {
@@ -63,6 +63,6 @@ struct VinylListView: View {
 
 struct VinylListView_Previews: PreviewProvider {
     static var previews: some View {
-        VinylListView()
+        VinylListView(library: Library())
     }
 }
