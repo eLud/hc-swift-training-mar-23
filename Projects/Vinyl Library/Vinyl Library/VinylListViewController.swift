@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class VinylListViewController: UIViewController {
 
@@ -34,9 +35,14 @@ class VinylListViewController: UIViewController {
     }
 
     @IBAction func showSearch(_ sender: Any) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "mint") {
-            show(vc, sender: nil)
-        }
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "mint") {
+//            show(vc, sender: nil)
+//        }
+
+        let list = VinylListView()
+        let host = UIHostingController(rootView: list)
+
+        show(host, sender: nil)
     }
 
     deinit {

@@ -21,6 +21,7 @@
 		3370097929B8CC2100BF5510 /* MusicHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097829B8CC2100BF5510 /* MusicHolder.swift */; };
 		337E6A1729B8E44A00933161 /* DemoCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337E6A1629B8E44A00933161 /* DemoCustomTableViewCell.swift */; };
 		337E6A1A29B9F62100933161 /* VinylListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3370097A29B8D29B00BF5510 /* VinylListViewController.swift */; };
+		33F2CDD129BB3D690060BA17 /* VinylListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2CDD029BB3D690060BA17 /* VinylListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3370097829B8CC2100BF5510 /* MusicHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicHolder.swift; sourceTree = "<group>"; };
 		3370097A29B8D29B00BF5510 /* VinylListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylListViewController.swift; sourceTree = "<group>"; };
 		337E6A1629B8E44A00933161 /* DemoCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCustomTableViewCell.swift; sourceTree = "<group>"; };
+		33F2CDD029BB3D690060BA17 /* VinylListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VinylListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				3370097629B8A16A00BF5510 /* Models */,
 				3370090629B7797E00BF5510 /* AppDelegate.swift */,
+				33F2CDD029BB3D690060BA17 /* VinylListView.swift */,
 				3370090829B7797E00BF5510 /* SceneDelegate.swift */,
 				3370090A29B7797E00BF5510 /* ViewController.swift */,
 				3370097A29B8D29B00BF5510 /* VinylListViewController.swift */,
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F2CDD129BB3D690060BA17 /* VinylListView.swift in Sources */,
 				3370096E29B78DD600BF5510 /* Vinyl.swift in Sources */,
 				3370090B29B7797E00BF5510 /* ViewController.swift in Sources */,
 				337E6A1729B8E44A00933161 /* DemoCustomTableViewCell.swift in Sources */,
