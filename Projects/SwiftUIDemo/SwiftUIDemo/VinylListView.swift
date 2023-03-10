@@ -9,38 +9,54 @@ import SwiftUI
 
 struct VinylListView: View {
 
-    @StateObject var library = Library(demoData: false)
+    @StateObject private var library = Library(demoData: false)
+    @State private var showForm = false
 
     var body: some View {
-        List {
-            Section {
-                Text("Pooeriv")
-                Text("Pooeriv")
-                Text("Pooeriv")
-                Button("Add") {
-                    library.add(Vinyl(albumName: "Bla", artist: "Bla", releaseDate: Date(), numberInSerie: nil, titles: [], scratched: true, speed: .rpm45))
-                }
+        NavigationView {
+            List {
+                TextField("", text: .constant(""))
+                buttonSection
+                vinylSection
             }
-            Section {
-                ForEach(library.vinyls) { vinyl in
-                    HStack {
-                        Image(systemName: "opticaldisc.fill")
-                        VStack(alignment: .leading) {
-                            Text(vinyl.albumName)
-                            Text(vinyl.artist)
-                                .foregroundColor(.secondary)
-                                .font(.caption2)
-                        }
+            .sheet(isPresented: $showForm, content: {
+                ContentView()
+            })
+            .navigationTitle("Vinyl list")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+//                        showForm = !showForm
+                        showForm.toggle()
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
-                .onDelete { indexSet in
-                    library.vinyls.remove(atOffsets: indexSet)
-                }
-                .onMove { indexSet, offset in
-                    library.vinyls.move(fromOffsets: indexSet, toOffset: offset)
+            }
+        }
+    }
+
+    private var buttonSection: some View {
+        Section {
+            Text("You have \(library.vinyls.count) vinyls")
+            Button("Add") {
+                library.add(Vinyl(albumName: "Bla", artist: "Bla", releaseDate: Date(), numberInSerie: nil, titles: [], scratched: true, speed: .rpm45))
+            }
+        }
+    }
+    private var vinylSection: some View {
+        Section {
+            ForEach(library.vinyls) { vinyl in
+                NavigationLink(destination: Text(vinyl.albumName)) {
+                    VinylCell(vinyl: vinyl)
                 }
             }
-
+            .onDelete { indexSet in
+                library.vinyls.remove(atOffsets: indexSet)
+            }
+            .onMove { indexSet, offset in
+                library.vinyls.move(fromOffsets: indexSet, toOffset: offset)
+            }
         }
     }
 }

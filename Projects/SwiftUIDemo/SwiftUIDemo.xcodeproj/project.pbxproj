@@ -18,6 +18,7 @@
 		33F2CDCA29BA32770060BA17 /* MusicHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2CDC729BA32770060BA17 /* MusicHolder.swift */; };
 		33F2CDCB29BA32770060BA17 /* Vinyl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2CDC829BA32770060BA17 /* Vinyl.swift */; };
 		33F2CDCD29BA39920060BA17 /* VinylListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2CDCC29BA39920060BA17 /* VinylListView.swift */; };
+		33F2CDCF29BB295F0060BA17 /* VinylCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2CDCE29BB295F0060BA17 /* VinylCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		33F2CDC729BA32770060BA17 /* MusicHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicHolder.swift; sourceTree = "<group>"; };
 		33F2CDC829BA32770060BA17 /* Vinyl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vinyl.swift; sourceTree = "<group>"; };
 		33F2CDCC29BA39920060BA17 /* VinylListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylListView.swift; sourceTree = "<group>"; };
+		33F2CDCE29BB295F0060BA17 /* VinylCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				33F2CD9A29BA1AEF0060BA17 /* SwiftUIDemoApp.swift */,
 				33F2CD9C29BA1AEF0060BA17 /* ContentView.swift */,
 				33F2CDCC29BA39920060BA17 /* VinylListView.swift */,
+				33F2CDCE29BB295F0060BA17 /* VinylCell.swift */,
 				33F2CD9E29BA1AF00060BA17 /* Assets.xcassets */,
 				33F2CDA029BA1AF00060BA17 /* SwiftUIDemo.entitlements */,
 				33F2CDA129BA1AF00060BA17 /* Preview Content */,
@@ -285,6 +288,7 @@
 				33F2CDCB29BA32770060BA17 /* Vinyl.swift in Sources */,
 				33F2CDCD29BA39920060BA17 /* VinylListView.swift in Sources */,
 				33F2CDC929BA32770060BA17 /* Library.swift in Sources */,
+				33F2CDCF29BB295F0060BA17 /* VinylCell.swift in Sources */,
 				33F2CDCA29BA32770060BA17 /* MusicHolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
